@@ -1,3 +1,21 @@
-{% for movie in  movies%}
-<li>{{movie}}</li>
-{% endfor %}
+{% extends 'base.html'%}
+{% block content %}
+<div  class="w-75 m-auto" >
+    <div class="row" >
+        {% for movie in movies%}
+            <div class="col-lg-4 col-md-4 col-sm-4 col-12" >
+                    <div class="card my-2 " data-toggle="tooltip" title="{{movie}}" >
+                        <a href="/detail?movie={{movie}}" class='movie_a'>
+                            <div class="card-header bg-primary "></div>
+                            <div class="card-body">{{movie}}</div>
+                            <div class="card-footer bg-success"></div>
+                        </a>
+                    </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+
